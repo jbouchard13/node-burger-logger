@@ -1,3 +1,107 @@
 body {
+  background-color: rgb(197, 193, 153);
+}
+
+.container {
+  padding-top: 3rem;
+}
+
+.wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ketchup {
+  width: 100%;
   background-color: red;
+  height: 1vh;
+}
+.lettuce {
+  width: 100%;
+  background-color: #5bb902;
+  height: 1.5vh;
+}
+.bun-top {
+  width: 100%;
+  height: 10vh;
+  background-color: orange;
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.bun-bottom {
+  width: 100%;
+  height: 10vh;
+  background-color: orange;
+  border-bottom-left-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.title {
+  margin: auto;
+  position: relative;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.list-item {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-wrapper {
+  width: 50%;
+  padding-left: 2rem;
+}
+
+.burger-name {
+  width: 50%;
+  text-align: right;
+  padding-right: 2rem;
+  justify-content: right;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #e7c124;
+}
+
+.textbox {
+  width: 100%;
+  height: 3vh;
+  opacity: 50%;
+  offset: 33%;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 3vh;
+}
+
+.devoured {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #8c560c;
+  color: white;
+}
+
+.uneaten {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #8c560c;
+  color: white;
 }
