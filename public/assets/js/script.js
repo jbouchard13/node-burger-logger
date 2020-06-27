@@ -1,8 +1,30 @@
 // create event listeners for devour and submit buttons
 
 $(".devour-btn").on("click", (e) => {
-  e.preventDefault();
-  alert("clicked");
+  // get clicked button's data-id
+  const id = e.target.dataset.id;
+
+  // console.log(id);
+
+  // create an object to set the devoured value to true
+  const devouredSet = {
+    // set the devoured value to 1 to set it to true in the db
+    devoured: 1,
+  };
+
+  // call ajax put request with the id put into the request url
+  $.ajax({
+    method: "PUT",
+    url: `/api/burgers/${id}`,
+    data: devouredSet,
+  })
+    .then((result) => {
+      console.log(result);
+      location.reload();
+    })
+    .catch((err) => {
+      alert("An error occured");
+    });
 });
 
 $(".submit-btn").on("click", (e) => {

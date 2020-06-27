@@ -28,15 +28,21 @@ router.post("/api/burgers", (req, res) => {
   } else {
     // call the create function
     burger.insertOne(req.body, (result) => {
-      res.status(200).end();
+      res.status(200).json(result).end();
     });
   }
 });
 
-router.put("api/burgers/:id?", (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
   // set the url param to a variable
-  const condition = req.params.id;
+  const id = parseInt(req.params.id);
+  // console.log(req.body);
+  // console.log(id);
+
   // call the update function to update a burger to be devoured:true
+  burger.updateOne(req.body, id, (result) => {
+    res.status(200).json(result).end();
+  });
 });
 
 module.exports = router;

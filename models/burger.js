@@ -15,7 +15,12 @@ const burger = {
     });
   },
 
-  updateOne: (cb) => {},
+  updateOne: (bool, id, cb) => {
+    // insert tableName and boolean value true into the orm function
+    orm.updateOne("burgers", bool, id, (res) => {
+      cb(res);
+    });
+  },
 };
 
 module.exports = burger;

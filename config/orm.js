@@ -26,10 +26,21 @@ const insertOne = (tableName, burgerName, cb) => {
   // return data from db to update page
 };
 
-const updateOne = (burgerName, tableName, trueFalse) => {
-  // pass burger name, table name, and whether if devoured is true or false
+const updateOne = (tableName, bool, id, cb) => {
+  // pass id, table name, boolean condition
   // use those values to set up sql query
-  // update where devoured = false
+  const queryString = "UPDATE ?? SET ? WHERE id=?";
+
+  connection.query(
+    queryString,
+    // update where devoured = false
+    [tableName, bool, id],
+    (err, result) => {
+      if (err) throw err;
+      cb(result);
+    }
+  );
+
   // set that value to true
   // return data from db to update page
 };
