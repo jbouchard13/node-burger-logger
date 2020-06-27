@@ -1,8 +1,14 @@
 const connection = require("./connection");
 
-const selectAll = (tableName) => {
+const selectAll = (tableName, cb) => {
   // pass table name into function
+  const queryString = "SELECT * FROM ??";
   // use table name to set up sql query
+  connection.query(queryString, tableName, (err, result) => {
+    if (err) throw err;
+    // callback the result
+    cb(result);
+  });
   // select all from tableName
   // return data from db to update page
 };
