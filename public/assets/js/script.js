@@ -18,9 +18,14 @@ $(".submit-btn").on("click", (e) => {
     // send the new burger data to the back end to be added to the db
     type: "POST",
     data: newBurger,
-  }).then(() => {
-    console.log(newBurger);
-    // reload the page to display the added burger to the user
-    location.reload();
-  });
+  })
+    .then((result) => {
+      // reload the page to display the added burger to the user
+      location.reload();
+    })
+    .catch((err) => {
+      // alert the user if no burger data is typed
+      // use the response message from the back end for the alert
+      alert(err.responseJSON.errorMsg);
+    });
 });

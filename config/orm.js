@@ -2,6 +2,7 @@ const connection = require("./connection");
 
 const selectAll = (tableName, cb) => {
   // pass table name into function
+  // select all from tableName
   const queryString = "SELECT * FROM ??";
   // use table name to set up sql query
   connection.query(queryString, tableName, (err, result) => {
@@ -9,14 +10,19 @@ const selectAll = (tableName, cb) => {
     // callback the result
     cb(result);
   });
-  // select all from tableName
+
   // return data from db to update page
 };
 
-const insertOne = (burgerName, tableName) => {
+const insertOne = (tableName, burgerName, cb) => {
   // pass burger name and table name into function
   // use those values to set up sql query
+  const queryString = "INSERT INTO ?? SET ?";
   // insert burgerName into tableName
+  connection.query(queryString, [tableName, burgerName], (err, result) => {
+    if (err) throw err;
+    cb(result);
+  });
   // return data from db to update page
 };
 

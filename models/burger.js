@@ -8,7 +8,12 @@ const burger = {
     });
   },
 
-  insertOne: (cb) => {},
+  insertOne: (burgerName, cb) => {
+    // insert tableName into orm function
+    orm.insertOne("burgers", burgerName, (res) => {
+      cb(res);
+    });
+  },
 
   updateOne: (cb) => {},
 };

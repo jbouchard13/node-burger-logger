@@ -19,8 +19,18 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/burgers", (req, res) => {
-  // call the create function
-  // refresh the index page with updated info
+  if (req.body.burger_name === "") {
+    // make sure the request has data
+    return res
+      .status(404)
+      .json({ errorMsg: "Please be sure to type in a burger" })
+      .end();
+  } else {
+    // call the create function
+    burger.insertOne(req.body, (result) => {
+      res.status(200).end();
+    });
+  }
 });
 
 router.put("api/burgers/:id?", (req, res) => {
