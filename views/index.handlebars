@@ -2,16 +2,27 @@
     <h2>Burgers I wanna eat</h2>
     <ul>
         {{#each burgers}}
-        <li>
-            {{burger_name}}
-            <button class="devour-btn" data-id="{{id}}">Devour it!</button>
-        </li>
+            {{#unless devoured}}
+                <li>
+                    {{burger_name}}
+                    <button class="devour-btn" type="submit" data-id="{{id}}">Devour it!</button>
+                </li>
+            {{/unless}}
         {{/each}}
     </ul>
 </div>
 
 <div id="devoured">
     <h2>Burgers I ate.</h2>
+    <ul>
+        {{#each burgers}}
+            {{#if devoured}}
+                <li>
+                    {{burger_name}}
+                </li>
+            {{/if}}
+        {{/each}}
+    </ul>
 </div>
 
 <form class="add-form">
