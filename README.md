@@ -13,6 +13,8 @@
 > [Questions](#questions)
 
 ### Demo
+![burger-tracker](https://user-images.githubusercontent.com/61129844/85965098-bcf43300-b989-11ea-9873-4b7b68ab90b2.gif)
+
 
 ### Description
 
@@ -24,7 +26,7 @@ After the repo is cloned, an npm install will need to be run to get all of the p
 
 ### Contributors
 
-![badge with contributors name](https://img.shields.io/badge/Built%20By--brightgreen)
+![badge with contributors name](https://img.shields.io/badge/Built%20ByJohn$20Bouchard--brightgreen)
 
 ### Questions
 
